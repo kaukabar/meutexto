@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29/10</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #1e1e2f;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #2a2a40;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input[type="password"] {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            width: calc(100% - 24px);
+            background-color: #3a3a50;
+            color: #fff;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: #ff6666;
+            margin-top: 10px;
+        }
+        .content h1 {
+            color: #ffcb6b;
+        }
+        .content p {
+            text-align: justify;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const correctPassword = "the1"; // Change this to your desired password
+            
+            if (password === correctPassword) {
+                document.getElementById('main-content').innerHTML = `
+                <div class="content">
+                    <h1>29/10</h1>
+                    <p>Eu era como um carrossel em um parque de diversões abandonado, girando sem música, com os cavalos de plástico usando óculos de natação. Cada volta que eu dava era um convite para entrar, mas também um aviso de “não ultrapasse” pintado em tinta fluorescente. Você deveria ter ficado na borda, tentando entender se era seguro ou se, ao pisar, você seria lançado para o espaço como um astronauta amador.</p>
+                    
+                    <p>Estar ao seu lado era como assistir a um documentário sobre pinguins, narrado por alguém especialista em futebol. Havia informações que não pareciam fazer sentido, mas eram entregues com tanta confiança que ninguém ousava questionar. Alguém era o locutor, o pinguim e o iceberg tudo ao mesmo tempo, enquanto eu tentava descobrir como aquilo tinha a ver comigo.</p>
+                    
+                    <p>Cada interação com você era como um código QR que, quando lido, levava a um site que não carrega. Outras vezes, era como um aquário cheio de peixes que nadavam para trás, olhando para mim com um ar de julgamento. Eu ficava ali, me perguntando se eles sabiam o que eu estava fazendo.</p>
+                    
+                    <p>Havia momentos em que estar com você parecia andar por um campo de girassóis feito de antenas parabólicas. Tudo apontava para o céu, mas ninguém sabia o que estavam captando. Eu ouvia estática, via luzes piscando, e me perguntava se era uma mensagem do universo ou só interferência. Você era essa interferência, bonita, mas completamente errada.</p>
+                    
+                    <p>Agora, parece que estamos presos em uma máquina de café que insiste em cuspir chá de camomila, mesmo quando todo mundo pediu cappuccino. As pessoas na fila ficam confusas, e eu sou aquela que tenta consertar o botão, mas acaba apertando o alarme de incêndio sem querer. O caos se instala, mas ninguém sai correndo. Eles só ficam olhando para mim, esperando uma explicação que eu não tenho.</p>
+                    
+                    <p>Estar com você era como tentar montar um quebra-cabeça feito de gelatina. As peças se encaixavam por um segundo, mas depois escorregavam, e eu tinha que começar de novo. E o mais estranho? As bordas do quebra-cabeça continuavam mudando, como se alguém estivesse redesenhando o formato enquanto eu olhava para o outro lado.</p>
+                    
+                    <p>No final das contas, tento entender esse jogo maluco. Provavelmente não vou ganhar, e estou começando a achar que você também não vai. Mas tudo bem, porque, no fundo, nós dois sabemos que esse jogo sempre foi sobre tentar entender o inefável.</p>
+                    
+                    <p>Espero que, um dia, quando as coisas pararem de funcionar e o quebra-cabeça for resolvido, alguém olhe para nós e diga: "Foi apenas um jogo de bingo em que ninguém acertou os números". Até porque, no fundo, as cartelas já tinham dono.</p>
+                </div>`;
+            } else {
+                document.getElementById('error-message').innerText = "Senha incorreta. Tente novamente.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="main-content" class="container">
+        <h1>Área Protegida</h1>
+        <p>Insira a senha para acessar o conteúdo:</p>
+        <input type="password" id="password" placeholder="Digite a senha">
+        <button onclick="checkPassword()">Entrar</button>
+        <p id="error-message" class="error"></p>
+    </div>
+</body>
+</html>
