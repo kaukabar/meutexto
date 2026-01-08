@@ -86,19 +86,51 @@
                     
                     <p>Espero que, um dia, quando as coisas pararem de funcionar e o quebra-cabeça for resolvido, alguém olhe para nós e diga: "Foi apenas um jogo de bingo em que ninguém acertou os números". Até porque, no fundo, as cartelas já tinham dono.</p>
                 </div>`;
-            } else {
-                document.getElementById('error-message').innerText = "Senha incorreta. Tente novamente.";
-            }
+                          startBalloons(); 
+                addMusic();
+            } else { 
+                document.getElementById('error-message').innerText = "Senha incorreta. Tente novamente!"; 
+            } 
         }
-    </script>
-</head>
-<body>
-    <div id="main-content" class="container">
-        <h1>Área Protegida</h1>
-        <p>Insira a senha para acessar o conteúdo:</p>
-        <input type="password" id="password" placeholder="Digite a senha">
-        <button onclick="checkPassword()">Entrar</button>
+
+        function startBalloons() { 
+            const container = document.getElementById('balloon-container'); 
+            for (let i = 0; i < 30; i++) { 
+                const balloon = document.createElement('div'); 
+                balloon.classList.add('balloon'); 
+                balloon.style.backgroundColor = getRandomColor(); 
+                balloon.style.left = Math.random() * 100 + 'vw'; 
+                balloon.style.animationDuration = Math.random() * 2 + 3 + 's'; 
+                container.appendChild(balloon); 
+            } 
+        }
+
+        function getRandomColor() { 
+            const colors = ['#ff0000', '#ffa500', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff']; 
+            return colors[Math.floor(Math.random() * colors.length)]; 
+        }
+
+        function addMusic() { 
+            const iframe = document.createElement('iframe');
+            iframe.width = "560";
+            iframe.height = "315";
+            iframe.src = "https://www.youtube.com/embed/cZb-ubdscvA?autoplay=1";
+            iframe.frameBorder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            document.body.appendChild(iframe);
+        }
+    </script> 
+</head> 
+<body> 
+    <div class="container"> 
+        <h1>ALERTA</h1> 
+        <p>Insira a senha para acessar o conteúdo:</p> 
+        <p>Dica: a senha está na imagem que foi enviada</p> 
+        <p>BOBAO, EU SEI A SENHA E VOCE NAO</p> 
+        <input type="password" id="password" placeholder="TENTE A SENHA"> 
+        <button onclick="checkPassword()">Entrar</button> 
         <p id="error-message" class="error"></p>
-    </div>
-</body>
+    </div> 
+</body> 
 </html>
